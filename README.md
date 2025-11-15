@@ -1,7 +1,9 @@
 🎯 About
+
 SmartDairy is a full-featured dairy management system designed to streamline operations for dairy businesses. It provides an intuitive web interface for managing customers, recording daily milk collections, generating professional invoices, and leveraging AI-powered forecasting to predict future milk quantities.
 
 ✨ Features
+
 1. Customer Management
 ➕ Add new customers with custom pricing
 📋 View all customers in a organized table
@@ -31,7 +33,9 @@ SmartDairy is a full-featured dairy management system designed to streamline ope
 📈 Key metrics at a glance
 📋 Recent entries overview
 💡 Quick insights
+
 🛠️ Tech Stack
+
 Python 3.8+ - Core programming language
 Streamlit - Web application framework
 Pandas - Data manipulation and analysis
