@@ -1,0 +1,43 @@
+📦 FILES TO UPLOAD TO GITHUB
+============================
+
+Upload these files and folders to your GitHub repository:
+
+✅ FILES (drag and drop):
+-------------------------
+app.py
+requirements.txt
+README.md
+Procfile
+setup.sh
+.gitignore
+presentation.pptx
+
+✅ FOLDERS (upload entire folders):
+-----------------------------------
+utils/
+  - billing.py
+  - db.py
+  - forecasting.py
+
+templates/
+  - invoice_template.html
+
+assets/
+  - logo.png
+
+.streamlit/
+  - config.toml
+
+❌ DO NOT UPLOAD:
+----------------
+smartdairy.db (database file - will be auto-created)
+__pycache__ (Python cache - already ignored)
+*.pdf, *.xlsx, *.csv (generated invoices)
+
+⚠️ IMPORTANT:
+--------------
+- Make sure repository is PUBLIC
+- Upload .streamlit folder (it's hidden, make sure to show hidden files)
+- Upload .gitignore file
+

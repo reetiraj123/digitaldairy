@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartDairy - Monthly Invoice</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .invoice-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            padding: 40px;
+        }
+        
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #2E86AB;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            color: #2E86AB;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .invoice-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+        
+        .info-section {
+            flex: 1;
+        }
+        
+        .info-section h3 {
+            color: #1B4332;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .info-section p {
+            color: #555;
+            margin: 5px 0;
+        }
+        
+        .billing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .billing-table thead {
+            background: #2E86AB;
+            color: white;
+        }
+        
+        .billing-table th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        .billing-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .billing-table tbody tr:hover {
+            background: #f5f5f5;
+        }
+        
+        .billing-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .total-row {
+            background: #F77F00 !important;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .total-row td {
+            padding: 15px;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #e0e0e0;
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+            font-style: italic;
+        }
+        
+        .amount {
+            text-align: right;
+            font-weight: 600;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .invoice-container {
+                box-shadow: none;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="invoice-container">
+        <div class="header">
+            <h1>🐄 SmartDairy</h1>
+            <p>AI Powered Digital Dairy Management System</p>
+        </div>
+        
+        <div class="invoice-info">
+            <div class="info-section">
+                <h3>Invoice Details</h3>
+                <p><strong>Period:</strong> {{MONTH_YEAR}}</p>
+                <p><strong>Generated:</strong> {{GENERATED_DATE}}</p>
+            </div>
+            <div class="info-section">
+                <h3>Billing Summary</h3>
+                <p><strong>Total Customers:</strong> {{TOTAL_CUSTOMERS}}</p>
+                <p><strong>Grand Total:</strong> ₹{{GRAND_TOTAL}}</p>
+            </div>
+        </div>
+        
+        <table class="billing-table">
+            <thead>
+                <tr>
+                    <th>Customer Name</th>
+                    <th>Total Litres</th>
+                    <th>Rate/Litre (₹)</th>
+                    <th class="amount">Total Amount (₹)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{BILLING_ROWS}}
+            </tbody>
+            <tfoot>
+                <tr class="total-row">
+                    <td colspan="3"><strong>GRAND TOTAL</strong></td>
+                    <td class="amount">₹{{GRAND_TOTAL}}</td>
+                </tr>
+            </tfoot>
+        </table>
+        
+        <div class="footer">
+            <p>This is a computer-generated invoice from SmartDairy System.</p>
+            <p>Thank you for your business!</p>
+        </div>
+    </div>
+</body>
+</html>
+
